@@ -1,0 +1,65 @@
+# ================================
+# Scala / SBT
+# ================================
+
+# SBT build output
+target/
+project/target/
+project/project/
+.bsp/
+.metals/
+.scala-build/
+
+# SBT / Scala generated files
+*.class
+*.jar
+*.log
+
+# ================================
+# Chisel / FIRRTL / Simulation
+# ================================
+
+# Generated Chisel/FIRRTL files
+test_run_dir/
+*.fir
+*.anno.json
+*.lo.fir
+
+# GTKWave / VCD waveform files
+*.vcd
+*.fst
+*.wlf
+
+# Generated simulation output
+*.out
+*.dump
+
+# ================================
+# IDEs / Editors
+# ================================
+
+# VS Code
+.vscode/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# ================================
+# OS generated files
+# ================================
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Linux
+*~
