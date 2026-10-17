@@ -1,7 +1,5 @@
 <div align="center">
 
-<div align="center">
-
 ![Project Preview](./screenshots/krypton-banner.png)
 
 <br>
