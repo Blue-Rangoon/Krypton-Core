@@ -75,8 +75,8 @@ Because the whole design is written in **Chisel**, the hardware is describable, 
 
 <!-- 🖼️ IMAGE 3: RISC-V datapath diagram. Save it as images/RiscV_DataPath.jpeg (no spaces in the filename) -->
 <p align="center">
-  <a href="images/RiscV_DataPath.jpeg">
-    <img src="images/RiscV_DataPath.jpeg" alt="RISC-V Single Cycle Architecture" width="90%">
+  <a href="screenshots/riscv-datapath.jpeg">
+    <img src="screenshots/riscv-datapath.jpeg" alt="RISC-V Single Cycle Architecture" width="90%">
   </a>
 </p>
 
