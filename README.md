@@ -2,6 +2,8 @@
 
 ![Project Preview](./screenshots/krypton-banner.png)
 
+# Krypton Core
+
 <br>
 
 <!-- ⌨️ Typing animation -->
@@ -12,7 +14,7 @@
 <br>
 
 <!-- 🎞️ IMAGE 2: animated loading GIF (krypton-loading.gif) -->
-<img src="screenshots/krypton_loading.gif" alt="Krypton Loading" width="700">
+<!-- <img src="screenshots/krypton_loading.gif" alt="Krypton Loading" width="700"> -->
 
 <br><br>
 
