@@ -2,10 +2,6 @@
 
 ![Project Preview](./screenshots/krypton-banner.png)
 
-# Krypton Core
-
-<br>
-
 <!-- ⌨️ Typing animation -->
 <a href="https://github.com/Blue-Rangoon/Krypton-Core">
   <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&weight=600&size=24&duration=2800&pause=900&color=00E5FF&center=true&vCenter=true&width=720&height=60&lines=Krypton-Core+%E2%9A%A1;Single-Cycle+RV32I+RISC-V+Processor;Designed+in+Scala+%2B+Chisel;Verified+Cycle-by-Cycle+with+GTKWave;From+Instruction+Fetch+to+Write+Back" alt="Typing SVG" />
