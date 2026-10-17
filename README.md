@@ -1,45 +1,89 @@
-![Project Preview](./screenshots/krypton-banner.png)
+<div align="center">
 
 <div align="center">
 
-<!-- 🖼️ IMAGE 1: Krypton Core banner (you already added it to the repo) -->
-<img src="images/krypton-banner.png" alt="Krypton-Core Banner" width="100%">
+![Project Preview](./screenshots/krypton-banner.png)
 
-# ⚡ Krypton-Core
+<br>
 
-### A Clean, Single-Cycle RV32I Processor Built with Chisel
+<!-- ⌨️ Typing animation -->
+<a href="https://github.com/Blue-Rangoon/Krypton-Core">
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&weight=600&size=24&duration=2800&pause=900&color=00E5FF&center=true&vCenter=true&width=720&height=60&lines=Krypton-Core+%E2%9A%A1;Single-Cycle+RV32I+RISC-V+Processor;Designed+in+Scala+%2B+Chisel;Verified+Cycle-by-Cycle+with+GTKWave;From+Instruction+Fetch+to+Write+Back" alt="Typing SVG" />
+</a>
 
-[![RISC-V](https://img.shields.io/badge/ISA-RV32I-blue?style=for-the-badge)](https://riscv.org/)
-[![Chisel](https://img.shields.io/badge/HDL-Chisel-orange?style=for-the-badge)](https://www.chisel-lang.org/)
-[![Scala](https://img.shields.io/badge/Language-Scala-red?style=for-the-badge)](https://www.scala-lang.org/)
-[![GTKWave](https://img.shields.io/badge/Waveform-GTKWave-green?style=for-the-badge)](https://gtkwave.sourceforge.net/)
+<br>
+
+<!-- 🎞️ IMAGE 2: animated loading GIF (krypton-loading.gif) -->
+<img src="screenshots/krypton_loading.gif" alt="Krypton Loading" width="700">
+
+<br><br>
+
+[![RISC-V](https://img.shields.io/badge/ISA-RV32I-0A66C2?style=for-the-badge&logo=riscv&logoColor=white)](https://riscv.org/)
+[![Chisel](https://img.shields.io/badge/HDL-Chisel-F28C28?style=for-the-badge)](https://www.chisel-lang.org/)
+[![Scala](https://img.shields.io/badge/Language-Scala-DC322F?style=for-the-badge&logo=scala&logoColor=white)](https://www.scala-lang.org/)
+[![SBT](https://img.shields.io/badge/Build-SBT-6F42C1?style=for-the-badge)](https://www.scala-sbt.org/)
+[![GTKWave](https://img.shields.io/badge/Waveform-GTKWave-2EA44F?style=for-the-badge)](https://gtkwave.sourceforge.net/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-lightgrey?style=for-the-badge)](LICENSE)
+
+**[🧠 About](#-about-krypton-core)** •
+**[🏗️ Datapath](#️-risc-v-single-cycle-datapath)** •
+**[🔩 Components](#-processor-components)** •
+**[🚀 Quick Start](#-quick-start)** •
+**[🌊 GTKWave](#-gtkwave)** •
+**[🌀 Fibonacci](#-fibonacci-demonstration)**
 
 </div>
 
 ---
 
-**Krypton-Core** is a single-cycle **RV32I RISC-V processor** designed and implemented using **Scala + Chisel**.
+## ✨ Overview
 
-It provides a complete processor datapath with instruction memory, register file, ALU, control logic, data memory, branch handling, and next-PC generation — with support for cycle-by-cycle verification through **GTKWave**.
+**Krypton-Core** is a single-cycle **RV32I RISC-V processor** designed and implemented in **Scala + Chisel**.
+
+It brings together a full processor datapath: instruction memory, register file, ALU, control logic, data memory, branch handling and next-PC generation. Every run can be dumped to a VCD and inspected **cycle by cycle in GTKWave**.
+
+```text
+⚡ ISA          →  RV32I (RISC-V 32-bit base integer)
+🧬 Design Style →  Single-cycle, one instruction per clock
+🛠️ Language     →  Scala + Chisel (hardware construction)
+🧪 Verification →  ChiselTest + GTKWave waveforms
+```
 
 ---
 
 ## 🧠 About Krypton-Core
 
-Krypton-Core is designed as a **single-cycle RISC-V processor**, where an instruction passes through the processor datapath within a single clock cycle.
+Krypton-Core is a **single-cycle RISC-V processor**: every instruction travels through the whole datapath within one clock cycle.
 
 The core follows the classic RISC-V execution flow:
 
 > **Fetch → Decode → Execute → Memory → Write Back → Next PC**
 
-The project is implemented completely in **Chisel**, making the processor hardware describable, testable, and suitable for RTL generation.
+Because the whole design is written in **Chisel**, the hardware is describable, testable, and ready for RTL generation.
+
+---
+
+## 🎯 Highlights
+
+| | Feature |
+| :-: | :-- |
+| 🧩 | **Modular design**: every block (ALU, RegFile, Controller...) is its own Chisel module |
+| ⏱️ | **Single-cycle execution**: simple, easy-to-follow datapath |
+| 🔀 | **Branch + Jump support**: branch logic and JAL/JALR handling |
+| 📝 | **Swappable programs**: load different instruction files into instruction memory |
+| 🌊 | **Waveform debugging**: generate VCDs and step through every clock cycle |
+| 🧪 | **Testable**: run hardware tests straight from SBT |
 
 ---
 
 ## 🏗️ RISC-V Single-Cycle Datapath
 
-<!-- 🖼️ IMAGE 2: RISC-V datapath diagram. Save it as images/RiscV_DataPath.jpeg (no spaces in the filename) -->
-[![RISC-V Single Cycle Architecture](images/RiscV_DataPath.jpeg)](images/RiscV_DataPath.jpeg)
+<!-- 🖼️ IMAGE 3: RISC-V datapath diagram. Save it as images/RiscV_DataPath.jpeg (no spaces in the filename) -->
+<p align="center">
+  <a href="images/RiscV_DataPath.jpeg">
+    <img src="images/RiscV_DataPath.jpeg" alt="RISC-V Single Cycle Architecture" width="90%">
+  </a>
+</p>
 
 The datapath connects the major processor components to execute RISC-V instructions.
 
@@ -86,8 +130,6 @@ The datapath connects the major processor components to execute RISC-V instructi
 
 ## 🔩 Processor Components
 
-Krypton-Core is divided into modular hardware components:
-
 | Component                  | Responsibility                             |
 | -------------------------- | ------------------------------------------ |
 | 🧭 **Program Counter**     | Holds the current instruction address      |
@@ -107,36 +149,27 @@ Krypton-Core is divided into modular hardware components:
 
 ## 📂 Repository Structure
 
+<details>
+<summary><b>Click to expand the project tree</b></summary>
+
 ```text
 Krypton-Core/
 │
-├── 📁 images/
-│   └── RISC-V architecture images
-│
-├── 📁 project/
-│   └── SBT project configuration
-│
+├── 📁 images/                  # Banner, datapath diagram, GIF
+├── 📁 project/                 # SBT project configuration
 ├── 📁 src/
-│   ├── main/
-│   │   └── scala/
-│   │       └── core/
-│   │           ├── ALU.scala
-│   │           ├── InstMem.scala
-│   │           ├── Top.scala
-│   │           ├── RegFile.scala
-│   │           ├── DataMem.scala
-│   │           ├── Controller.scala
-│   │           ├── Imm_gen.scala
-│   │           └── ...
-│   │
-│   └── test/
-│       └── scala/
-│           └── core/
-│
+│   ├── main/scala/core/
+│   │   ├── ALU.scala
+│   │   ├── InstMem.scala
+│   │   ├── Top.scala
+│   │   ├── RegFile.scala
+│   │   ├── DataMem.scala
+│   │   ├── Controller.scala
+│   │   ├── Imm_gen.scala
+│   │   └── ...
+│   └── test/scala/core/        # ChiselTest testbenches
 ├── 📁 target/
-│
-├── 📁 test_run_dir/
-│   └── Generated test / VCD files
+├── 📁 test_run_dir/            # Generated test + VCD files
 │
 ├── 📄 Assembly instructions.txt
 ├── 📄 fibonaciAssembly.txt
@@ -146,346 +179,171 @@ Krypton-Core/
 └── 📄 README.md
 ```
 
+</details>
+
 ---
 
 ## 📝 Instruction Programs
 
-Krypton-Core supports loading different instruction programs through the Instruction Memory.
+Krypton-Core loads different instruction programs through the Instruction Memory.
 
-The repository currently contains:
-
-### 📘 Assembly Program
-
-```text
-Assembly instructions.txt
-```
-
-Contains the assembly instructions for the main program.
-
-### 🌀 Fibonacci Program
-
-```text
-fibonaciAssembly.txt
-```
-
-Contains the assembly implementation of the Fibonacci program.
-
-### 🔢 Machine Instructions
-
-```text
-instruction.txt
-```
-
-Contains the instruction data used by the processor.
+| File | What it contains |
+| :-- | :-- |
+| 📘 `Assembly instructions.txt` | Assembly instructions for the main program |
+| 🌀 `fibonaciAssembly.txt` | Assembly implementation of the Fibonacci program |
+| 🔢 `instruction.txt` | Instruction data used by the processor |
 
 ---
 
 ## 🔄 Selecting a Program
 
-The instruction file executed by Krypton-Core is selected through `InstMem.scala` and `Top.scala`.
+The program executed by Krypton-Core is selected in `InstMem.scala` and `Top.scala`.
 
 ### 1️⃣ Configure Instruction Memory
 
-Open:
-
-```text
-src/main/scala/core/InstMem.scala
-```
-
-Find:
+Open `src/main/scala/core/InstMem.scala` and find:
 
 ```scala
 class InstMem(initFile: String = "fibonaciAssembly.txt") extends Module with Config4
 ```
 
-Change the filename to the program you want to execute.
-
-**Fibonacci**
+Change the filename to the program you want to run:
 
 ```scala
+// Fibonacci
 class InstMem(initFile: String = "fibonaciAssembly.txt") extends Module with Config4
-```
 
-**Assembly Program**
-
-```scala
+// Main assembly program
 class InstMem(initFile: String = "Assembly instructions.txt") extends Module with Config4
 ```
 
----
-
 ### 2️⃣ Configure the Top Module
 
-Open:
-
-```text
-src/main/scala/core/Top.scala
-```
-
-Find:
+Open `src/main/scala/core/Top.scala` and find:
 
 ```scala
 class Top(initFile: String = "fibonaciAssembly.txt") extends Module
 ```
 
-Change the filename to match the selected program.
-
-For example:
+Change the filename to match the selected program:
 
 ```scala
 class Top(initFile: String = "Assembly instructions.txt") extends Module
 ```
 
----
-
-## 🚀 Running Krypton-Core
-
-Move into the project:
-
-```bash
-cd <path-to>/Krypton-Core
-```
-
-Start SBT:
-
-```bash
-sbt
-```
-
-You should see the SBT prompt, for example:
-
-```text
-sbt:RISCV_Project>
-```
-
----
-
-## 🧪 Run a Test
-
-To execute a processor test:
-
-```bash
-testOnly core.TopTest
-```
-
-The general format is:
-
-```bash
-testOnly core.<TestName>
-```
-
-For example:
-
-```bash
-testOnly core.TopTest
-```
-
----
-
-## 📈 Generate a GTKWave VCD
-
-To generate a waveform while running the test:
-
-```bash
-testOnly core.TopTest -- -DwriteVcd=1
-```
-
-The important option is:
-
-```text
--DwriteVcd=1
-```
-
-This enables VCD waveform generation.
-
----
-
-## 🌊 GTKWave
-
-After the test finishes, open:
-
-```text
-test_run_dir/
-```
-
-Inside this directory, locate the directory generated for the test.
-
-The generated verification directory contains the waveform file.
-
-Open the VCD using:
-
-```bash
-gtkwave <generated-vcd-file>
-```
-
-For example:
-
-```bash
-gtkwave TopTest.vcd
-```
-
-<!-- 🖼️ IMAGE 3 (optional): screenshot of your GTKWave waveform. Save it as images/gtkwave-waveform.png and uncomment the line below -->
-<!-- ![GTKWave Waveform](images/gtkwave-waveform.png) -->
-
----
-
-## 🔬 What Can Be Observed?
-
-GTKWave makes it possible to inspect the processor **cycle-by-cycle**.
-
-Useful signals include:
-
-```text
-⏱ Clock
-📍 PC
-📖 Instruction
-🧮 ALU
-🗃 Register File
-💾 Data Memory
-🎛 Control Signals
-🔀 Branch Signals
-➡ Next PC
-📤 Register Output
-```
-
-You can follow the complete execution of the program by moving through the clock cycles.
-
-For example:
-
-```text
-Clock Cycle 1  → Instruction 1
-Clock Cycle 2  → Instruction 2
-Clock Cycle 3  → Instruction 3
-Clock Cycle 4  → Instruction 4
-       ...
-Clock Cycle N  → Instruction N
-```
-
-This provides a hardware-level view of how the RISC-V processor executes a program.
-
----
-
-## 🌀 Fibonacci Demonstration
-
-One of the programs included with Krypton-Core is a Fibonacci implementation.
-
-The program is stored in:
-
-```text
-fibonaciAssembly.txt
-```
-
-To execute it, configure both:
-
-```text
-InstMem.scala
-Top.scala
-```
-
-to use:
-
-```text
-fibonaciAssembly.txt
-```
-
-Then start SBT:
-
-```bash
-sbt
-```
-
-Run the test:
-
-```bash
-testOnly core.TopTest
-```
-
-Or generate a waveform:
-
-```bash
-testOnly core.TopTest -- -DwriteVcd=1
-```
-
-Then inspect the generated VCD in GTKWave.
-
----
-
-## 🧪 Verification Workflow
-
-The verification flow is intentionally simple:
-
-```text
-┌─────────────────────┐
-│ Select Program      │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Update InstMem.scala│
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Update Top.scala    │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│        sbt          │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│    testOnly ...     │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│    Generate VCD     │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│    test_run_dir     │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│      GTKWave        │
-└─────────────────────┘
-```
+> 💡 **Tip:** Use the same filename in both files so the program stays consistent.
 
 ---
 
 ## ⚡ Quick Start
 
-**Clone**
-
 ```bash
+# 1. Clone
 git clone https://github.com/Blue-Rangoon/Krypton-Core.git
-```
 
-**Enter Project**
-
-```bash
+# 2. Enter the project
 cd Krypton-Core
-```
 
-**Start SBT**
-
-```bash
+# 3. Start SBT
 sbt
 ```
 
-**Run Test**
+Inside SBT:
 
 ```bash
+# 4. Run the processor test
 testOnly core.TopTest
-```
 
-**Generate Waveform**
-
-```bash
+# 5. Run it and generate a waveform
 testOnly core.TopTest -- -DwriteVcd=1
 ```
 
-**Open GTKWave**
+Then open the waveform:
 
 ```bash
 gtkwave <generated-vcd-file>
+```
+
+> You should see the SBT prompt, for example `sbt:RISCV_Project>`
+
+The general test format is:
+
+```bash
+testOnly core.<TestName>
+```
+
+---
+
+## 🌊 GTKWave
+
+The important option for waveform generation is:
+
+```text
+-DwriteVcd=1
+```
+
+After the test finishes, open `test_run_dir/`, find the directory generated for the test, and open the VCD inside it:
+
+```bash
+gtkwave TopTest.vcd
+```
+
+<!-- 🖼️ IMAGE 4 (optional): screenshot of your GTKWave waveform. Save as images/gtkwave-waveform.png and uncomment the block below -->
+<!--
+<p align="center">
+  <img src="images/gtkwave-waveform.png" alt="GTKWave Waveform" width="90%">
+</p>
+-->
+
+### 🔬 What Can Be Observed?
+
+GTKWave lets you inspect the processor **cycle by cycle**.
+
+```text
+⏱ Clock          📍 PC             📖 Instruction
+🧮 ALU            🗃 Register File   💾 Data Memory
+🎛 Control Signals 🔀 Branch Signals  ➡ Next PC
+📤 Register Output
+```
+
+Follow the whole execution by stepping through the clock cycles:
+
+```text
+Clock Cycle 1  →  Instruction 1
+Clock Cycle 2  →  Instruction 2
+Clock Cycle 3  →  Instruction 3
+        ...
+Clock Cycle N  →  Instruction N
+```
+
+This gives a hardware-level view of how the RISC-V processor executes a program.
+
+---
+
+## 🌀 Fibonacci Demonstration
+
+One of the programs shipped with Krypton-Core is a Fibonacci implementation, stored in `fibonaciAssembly.txt`.
+
+**Run it in 4 steps:**
+
+1. Set `fibonaciAssembly.txt` in both `InstMem.scala` and `Top.scala`
+2. Start SBT with `sbt`
+3. Run `testOnly core.TopTest` (or add `-- -DwriteVcd=1` for a waveform)
+4. Inspect the generated VCD in GTKWave
+
+---
+
+## 🧪 Verification Workflow
+
+```mermaid
+flowchart LR
+    A[Select Program] --> B[Update InstMem.scala]
+    B --> C[Update Top.scala]
+    C --> D[sbt]
+    D --> E[testOnly core.TopTest]
+    E --> F[Generate VCD]
+    F --> G[test_run_dir]
+    G --> H[GTKWave]
 ```
 
 ---
@@ -505,46 +363,48 @@ gtkwave <generated-vcd-file>
 
 ## 🎯 Project Goals
 
-Krypton-Core was developed to explore the design and implementation of a RISC-V processor at the hardware level.
+Krypton-Core was built to explore the design and implementation of a RISC-V processor at the hardware level.
 
-The project focuses on:
-
-- 🧠 Understanding RISC-V architecture
-- ⚙️ Designing a single-cycle datapath
-- 🔧 Implementing processor components using Chisel
-- 🧩 Connecting datapath and control logic
-- 🧪 Testing hardware modules
-- 📊 Generating VCD waveforms
-- 🌊 Debugging processor execution using GTKWave
+- 🧠 Understand the RISC-V architecture
+- ⚙️ Design a single-cycle datapath
+- 🔧 Implement processor components in Chisel
+- 🧩 Connect datapath and control logic
+- 🧪 Test hardware modules
+- 📊 Generate VCD waveforms
+- 🌊 Debug processor execution with GTKWave
 
 ---
 
 ## 📚 RISC-V
 
-Krypton-Core is based on the **RISC-V RV32I instruction-set architecture**.
-
-The processor is designed around the fundamental RISC-V concepts of:
+Krypton-Core is based on the **RISC-V RV32I** instruction-set architecture, built around these fundamentals:
 
 ```text
-Registers
-   +
-ALU
-   +
-Memory
-   +
-Control
-   +
-Program Counter
-   ↓
-Instruction Execution
+Registers + ALU + Memory + Control + Program Counter
+                       ↓
+              Instruction Execution
 ```
 
 ---
 
-## 👨‍💻 Project
+## 🤝 Connect
 
-**Krypton-Core**
+<div align="center">
+
+**Built by [Blue Rangoon](https://github.com/Blue-Rangoon)**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Blue--Rangoon-181717?style=for-the-badge&logo=github)](https://github.com/Blue-Rangoon)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/saad-ali-rizvi)
+
+<!-- ✏️ Replace "Your Name" and "your-linkedin-id" above with your real details -->
+
+<br>
 
 > *A clean and simple single-cycle RV32I processor implemented in Chisel.*
 
 ⭐ If you find this project useful, consider giving the repository a star!
+
+<img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=16&duration=3000&pause=1000&color=8A8FFF&center=true&vCenter=true&width=500&height=30&lines=Thanks+for+stopping+by!;Happy+Hacking+%F0%9F%9A%80" alt="Footer Typing SVG" />
+
+</div>
+
