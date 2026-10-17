@@ -7,12 +7,11 @@
   <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&weight=600&size=24&duration=2800&pause=900&color=00E5FF&center=true&vCenter=true&width=720&height=60&lines=Krypton-Core+%E2%9A%A1;Single-Cycle+RV32I+RISC-V+Processor;Designed+in+Scala+%2B+Chisel;Verified+Cycle-by-Cycle+with+GTKWave;From+Instruction+Fetch+to+Write+Back" alt="Typing SVG" />
 </a>
 
-<br>
 
 <!-- 🎞️ IMAGE 2: animated loading GIF (krypton-loading.gif) -->
 <!-- <img src="screenshots/krypton_loading.gif" alt="Krypton Loading" width="700"> -->
 
-<br><br>
+<!-- <br><br> -->
 
 [![RISC-V](https://img.shields.io/badge/ISA-RV32I-0A66C2?style=for-the-badge&logo=riscv&logoColor=white)](https://riscv.org/)
 [![Chisel](https://img.shields.io/badge/HDL-Chisel-F28C28?style=for-the-badge)](https://www.chisel-lang.org/)
